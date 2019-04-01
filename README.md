@@ -1,4 +1,4 @@
-#　AStar Algorithm
+# AStar Algorithm
 
 AStar algorithm implementation with C++ using **Eigen**.
 
