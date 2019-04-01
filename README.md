@@ -51,8 +51,10 @@ Run sample codes by
 ```
   $ ./src/bin/astar src/data/map.txt
 ```
+![](https://github.com/sean85914/astar/blob/master/src/images/sample_1.png)
 and
 ```
   $ ./src/bin/astar_cv 100 100
 ```
 A window with random generated image will show up. Click start and end node then press space, the window will start to flash and the red path will shown.
+![](https://github.com/sean85914/astar/blob/master/src/images/astar.gif)
