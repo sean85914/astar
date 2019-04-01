@@ -34,3 +34,25 @@ AStar algorithm implementation with C++ using **Eigen**.
       - bool plan(AStar::NODE_LIST& res): start to plan and place result in res, return true if successfully to find
                                           path from start node to end node
                                           
+
+# Dependencies
+* CMake: at least 3.5
+* Eigen3
+* OpenCV
+
+# How to use
+
+```
+  $ cd && git clone https://github.com/sean85914/astar.git
+  $ cd astar && catkin_make
+```
+
+Run sample codes by
+```
+  $ ./src/bin/astar src/data/map.txt
+```
+and
+```
+  $ ./src/bin/astar_cv 100 100
+```
+A window with random generated image will show up. Click start and end node then press space, the window will start to flash and the red path will shown.
