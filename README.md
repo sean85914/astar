@@ -5,7 +5,7 @@ AStar algorithm implementation with C++ using **Eigen**.
 # File system
 - data: sample map data txt file
 - include: header
-- src: sample codes
+- sample: sample codes
   - astar.cpp: read file from input argument and return path from upper left to lower right corner
   - astar_cv.cpp: random generate image with size given from input and user can click on the canvas
                   to set the start and end node, after press space, it will start to draw red path 

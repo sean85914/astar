@@ -28,8 +28,8 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
     
 
 
-add_executable(astar_cv src/astar_cv.cpp)
+add_executable(astar_cv sample/astar_cv.cpp)
 target_link_libraries(astar_cv ${OpenCV_LIBS} ${Eigen_LIBS})
 
-add_executable(astar src/astar.cpp)
+add_executable(astar sample/astar.cpp)
 target_link_libraries(astar ${Eigen_LIBS})
