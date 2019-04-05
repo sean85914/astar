@@ -10,6 +10,8 @@ AStar algorithm implementation with C++ using **Eigen**.
   - astar_cv.cpp: random generate image with size given from input and user can click on the canvas
                   to set the start and end node, after press space, it will start to draw red path 
                   from user specific start node to end node
+  - test_empty.cpp: test with empty mstrix from left-up corner to right-down corner with user specific 
+                    matrix size, and output the execution time
 
 # Data structor
   - AStar::Node

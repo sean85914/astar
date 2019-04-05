@@ -33,3 +33,6 @@ target_link_libraries(astar_cv ${OpenCV_LIBS} ${Eigen_LIBS})
 
 add_executable(astar sample/astar.cpp)
 target_link_libraries(astar ${Eigen_LIBS})
+
+add_executable(test_empty sample/test_empty.cpp)
+target_link_libraries(test_empty ${Eigen_LIBS})
