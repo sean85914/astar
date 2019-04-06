@@ -2,6 +2,8 @@
 #include <ctime>
 #include "astar.hpp"
 
+bool ASTAR_VERBOSE = true;
+
 int main(int argc, char** argv)
 {
   if(argc!=2){

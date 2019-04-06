@@ -5,13 +5,15 @@
    A star path planning implement by c++
    Revised from David's python one
    Editor: Sean Lu 
-   Last edited: 4/1
+   Last edited: 4/6
 */
 
 #include <iostream> // std::cerr, std::endl
 #include <algorithm> // std::find
 #include <list> // std::list
 #include <Eigen/Dense> // Eigen::MatrixXd
+
+extern bool ASTAR_VERBOSE;
 
 namespace AStar{
  class Node{
@@ -59,11 +61,18 @@ namespace AStar{
        bool bound_check = true, node_check = true;
        if(start_.get_x()<0 or start_.get_x()>=height or start_.get_y()<0 or start_.get_y()>=width) bound_check = false;
        if(end_.get_x()<0 or end_.get_x()>=height or end_.get_y()<0 or end_.get_y()>=width) bound_check = false;
-       if(!bound_check) {std::cerr << "\033[1;31mInvalid input, ignoring...\033[0m" << std::endl; return false;}
+       if(!bound_check) {
+         if(ASTAR_VERBOSE)
+           std::cerr << "\033[1;31mInvalid input, ignoring...\033[0m" << std::endl; 
+         return false;
+       }
        // Check nodes
        if(map_(start_.get_x(), start_.get_y()) >= 50.) node_check = false;
        if(map_(end_.get_x(), end_.get_y()) >= 50.) node_check = false;
-       if(!node_check) {std::cerr << "\033[1;31mStart node or end node at obstacle, ignoring...\033[0m" << std::endl; return false;}
+       if(!node_check) {
+         if(ASTAR_VERBOSE) std::cerr << "\033[1;31mStart node or end node at obstacle, ignoring...\033[0m" << std::endl; 
+         return false;
+       }
        return true;
      }
      void clear_list(void){
@@ -100,7 +109,8 @@ namespace AStar{
        map_ = map;
        height = map.rows(); width = map.cols();
        if(!checkIfValid()) {
-         std::cerr << "\033[1;31mInvalid input, ignoring...\033[0m" << std::endl;
+         if(ASTAR_VERBOSE)
+           std::cerr << "\033[1;31mInvalid input, ignoring...\033[0m" << std::endl;
          return;}
        open.push_back(start_); // Add start node to open list
      }
@@ -117,7 +127,7 @@ namespace AStar{
        while(open.size()!=0){
          Node* current_node = new Node ();
          count += 1; 
-         if(count>=height*FACTOR) {printf("[AStar] Too much iterations, ignore...\n"); 
+         if(count>=height*FACTOR) {if(ASTAR_VERBOSE) printf("[AStar] Too much iterations, ignore...\n"); 
            clear_list(); return false;}
          // Get the current node
          *current_node = open.front();

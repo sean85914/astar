@@ -4,6 +4,8 @@
 #include <string>
 #include "astar.hpp"
 
+bool ASTAR_VERBOSE = false;
+
 Eigen::MatrixXd readFile(std::string filename)
 {
   std::ifstream inFile(filename);
@@ -66,5 +68,6 @@ int main(int argc, char** argv)
     } 
     std::cout << draw << std::endl;
   }
+  else {printf("No result found.\n");}
   return 0;
 }

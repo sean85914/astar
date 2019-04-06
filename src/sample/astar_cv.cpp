@@ -11,6 +11,7 @@ int height, width; // Image dimension
 static int count = 0;
 int start_x, start_y, end_x, end_y;
 bool get_in = false;
+bool ASTAR_VERBOSE = true;
 
 void mouse_cb(int Event, int x, int y, int flags, void* param)
 {
