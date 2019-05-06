@@ -38,6 +38,7 @@ AStar algorithm implementation with C++ using **Eigen**.
                                           
 
 # Dependencies
+* catkin
 * CMake: at least 3.5
 * Eigen3
 * OpenCV
