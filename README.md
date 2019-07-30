@@ -26,7 +26,7 @@ AStar algorithm implementation with C++ using **Eigen**.
       - void set_f(double f): set f score 
       - void set_g(double g): set g score
       - void set_h(double h): set h score
-  - std::list<AStar::Node> AStar::NODE_LIST 
+  - <pre> std::list<AStar::Node> AStar::NODE_LIST </pre>
   
   - AStar
     - public members
