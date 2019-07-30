@@ -47,7 +47,7 @@ int main(int argc, char** argv)
   
   srand(time(NULL));
   img.create(height, width, CV_8UC3);
-  cv::VideoWriter video("demo.avi", CV_FOURCC('M', 'J', 'P', 'G'), FPS, cv::Size(height, width));
+  cv::VideoWriter video("demo.avi", CV_FOURCC('M', 'J', 'P', 'G'), FPS, cv::Size(width, height));
   for(int i=0; i<img.rows; ++i){
     for(int j=0; j<img.cols; ++j){
       double x = (double) rand() / (RAND_MAX +1.0);
